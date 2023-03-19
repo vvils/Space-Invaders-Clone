@@ -1,11 +1,5 @@
-(* 
-val navbar : unit -> unit
-
-val panels: unit -> unit
-
-val volume : unit -> unit
-
-val connect_spotify: unit -> unit
-
-val display_song_info: unit -> unit  *)
-
+val navbar : unit
+val panels : unit
+val volume : unit
+val connect_spotify : unit
+val display_song_info : unit

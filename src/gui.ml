@@ -1,12 +1,23 @@
 open Graphics
 
+let navbar = ()
+let panels = ()
+let volume = ()
+let connect_spotify = ()
+let display_song_info = ()
 
-(* let navbar = Failure( "Unimplemented")
+let main () =
+  (* Initialize the Graphics library *)
+  open_graph " 640x480";
 
-let panels = Failure( "Unimplemented")
+  (* Draw a circle in the center of the screen *)
+  let x, y = size () in
+  let radius = min x y / 2 in
+  set_color blue;
+  fill_circle (x / 2) (y / 2) radius;
 
-let volume = Failure( "Unimplemented")
+  (* Wait for a mouse click before exiting *)
+  ignore (wait_next_event [ Button_down ])
 
-let connect_spotify = Failure( "Unimplemented")
-
-let display_song_info = Failure( "unimplemented") *)
+(* Run the main function *)
+let () = main ()
