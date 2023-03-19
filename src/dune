@@ -1,2 +1,4 @@
 (library
- (name main))
+ (name main)
+ (public_name Otune)
+ (libraries lablgtk2 graphics))

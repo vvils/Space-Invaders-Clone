@@ -1,6 +1,4 @@
 open Graphics
-
-
 (* let navbar = Failure( "Unimplemented")
 
 let panels = Failure( "Unimplemented")

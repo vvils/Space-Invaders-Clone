@@ -1,0 +1,81 @@
+(lang dune 3.7)
+(name Otune)
+(sections (lib .) (libexec .) (doc ../../doc/Otune))
+(files
+ (lib
+  (META
+   dune-package
+   gui.ml
+   gui.mli
+   main.a
+   main.cma
+   main.cmi
+   main.cmt
+   main.cmx
+   main.cmxa
+   main.ml
+   main__.cmi
+   main__.cmt
+   main__.cmx
+   main__.ml
+   main__Gui.cmi
+   main__Gui.cmt
+   main__Gui.cmti
+   main__Gui.cmx
+   main__Play.cmi
+   main__Play.cmt
+   main__Play.cmti
+   main__Play.cmx
+   main__Playlist.cmi
+   main__Playlist.cmt
+   main__Playlist.cmx
+   main__Search_bar.cmi
+   main__Search_bar.cmt
+   main__Search_bar.cmx
+   opam
+   play.ml
+   play.mli
+   playlist.ml
+   search_bar.ml))
+ (libexec (main.cmxs))
+ (doc (README.md)))
+(library
+ (name Otune)
+ (kind normal)
+ (archives (byte main.cma) (native main.cmxa))
+ (plugins (byte main.cma) (native main.cmxs))
+ (native_archives main.a)
+ (requires lablgtk2 graphics)
+ (main_module_name Main)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name main__)
+     (visibility public)
+     (kind alias)
+     (source (path Main__) (impl (path main__.ml-gen))))
+    (name Main)
+    (modules
+     (module
+      (obj_name main__Gui)
+      (visibility public)
+      (source (path Gui) (intf (path gui.mli)) (impl (path gui.ml))))
+     (module
+      (obj_name main)
+      (visibility public)
+      (source (path Main) (impl (path main.ml))))
+     (module
+      (obj_name main__Play)
+      (visibility public)
+      (source (path Play) (intf (path play.mli)) (impl (path play.ml))))
+     (module
+      (obj_name main__Playlist)
+      (visibility public)
+      (source (path Playlist) (impl (path playlist.ml))))
+     (module
+      (obj_name main__Search_bar)
+      (visibility public)
+      (source (path Search_bar) (impl (path search_bar.ml))))))
+   (wrapped true))))
