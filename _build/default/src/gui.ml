@@ -1,4 +1,4 @@
-open Graphics
+open Lablgtk3
 
 let navbar = ()
 let panels = ()

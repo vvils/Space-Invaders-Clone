@@ -1,0 +1,489 @@
+(lang dune 3.7)
+(name bogue)
+(version 20230310)
+(sections
+ (lib .)
+ (libexec .)
+ (bin ../../bin)
+ (share ../../share/bogue)
+ (doc ../../doc/bogue))
+(files
+ (lib
+  (META
+   b_avar.ml
+   b_border.ml
+   b_box.ml
+   b_button.ml
+   b_chain.ml
+   b_check.ml
+   b_debug_window.ml
+   b_draw.ml
+   b_dynvar.ml
+   b_empty.ml
+   b_flow.ml
+   b_image.ml
+   b_label.ml
+   b_layout.ml
+   b_long_list.ml
+   b_main.ml
+   b_makes.ml
+   b_menu.ml
+   b_mixer.ml
+   b_mouse.ml
+   b_popup.ml
+   b_print.ml
+   b_radiolist.ml
+   b_sdl_area.ml
+   b_select.ml
+   b_selection.ml
+   b_shortcut.ml
+   b_slider.ml
+   b_snapshot.ml
+   b_space.ml
+   b_style.ml
+   b_sync.ml
+   b_table.ml
+   b_tabs.ml
+   b_text_display.ml
+   b_text_input.ml
+   b_theme.ml
+   b_time.ml
+   b_timeout.ml
+   b_trigger.ml
+   b_tvar.ml
+   b_update.ml
+   b_utf8.ml
+   b_utils.ml
+   b_var.ml
+   b_widget.ml
+   b_window.ml
+   bogue.a
+   bogue.cma
+   bogue.cmi
+   bogue.cmt
+   bogue.cmti
+   bogue.cmx
+   bogue.cmxa
+   bogue.ml
+   bogue.mli
+   bogue__.cmi
+   bogue__.cmt
+   bogue__.cmx
+   bogue__.ml
+   bogue__B_avar.cmi
+   bogue__B_avar.cmt
+   bogue__B_avar.cmx
+   bogue__B_border.cmi
+   bogue__B_border.cmt
+   bogue__B_border.cmx
+   bogue__B_box.cmi
+   bogue__B_box.cmt
+   bogue__B_box.cmx
+   bogue__B_button.cmi
+   bogue__B_button.cmt
+   bogue__B_button.cmx
+   bogue__B_chain.cmi
+   bogue__B_chain.cmt
+   bogue__B_chain.cmx
+   bogue__B_check.cmi
+   bogue__B_check.cmt
+   bogue__B_check.cmx
+   bogue__B_debug_window.cmi
+   bogue__B_debug_window.cmt
+   bogue__B_debug_window.cmx
+   bogue__B_draw.cmi
+   bogue__B_draw.cmt
+   bogue__B_draw.cmx
+   bogue__B_dynvar.cmi
+   bogue__B_dynvar.cmt
+   bogue__B_dynvar.cmx
+   bogue__B_empty.cmi
+   bogue__B_empty.cmt
+   bogue__B_empty.cmx
+   bogue__B_flow.cmi
+   bogue__B_flow.cmt
+   bogue__B_flow.cmx
+   bogue__B_image.cmi
+   bogue__B_image.cmt
+   bogue__B_image.cmx
+   bogue__B_label.cmi
+   bogue__B_label.cmt
+   bogue__B_label.cmx
+   bogue__B_layout.cmi
+   bogue__B_layout.cmt
+   bogue__B_layout.cmx
+   bogue__B_long_list.cmi
+   bogue__B_long_list.cmt
+   bogue__B_long_list.cmx
+   bogue__B_main.cmi
+   bogue__B_main.cmt
+   bogue__B_main.cmx
+   bogue__B_makes.cmi
+   bogue__B_makes.cmt
+   bogue__B_makes.cmx
+   bogue__B_menu.cmi
+   bogue__B_menu.cmt
+   bogue__B_menu.cmx
+   bogue__B_mixer.cmi
+   bogue__B_mixer.cmt
+   bogue__B_mixer.cmx
+   bogue__B_mouse.cmi
+   bogue__B_mouse.cmt
+   bogue__B_mouse.cmx
+   bogue__B_popup.cmi
+   bogue__B_popup.cmt
+   bogue__B_popup.cmx
+   bogue__B_print.cmi
+   bogue__B_print.cmt
+   bogue__B_print.cmx
+   bogue__B_radiolist.cmi
+   bogue__B_radiolist.cmt
+   bogue__B_radiolist.cmx
+   bogue__B_sdl_area.cmi
+   bogue__B_sdl_area.cmt
+   bogue__B_sdl_area.cmx
+   bogue__B_select.cmi
+   bogue__B_select.cmt
+   bogue__B_select.cmx
+   bogue__B_selection.cmi
+   bogue__B_selection.cmt
+   bogue__B_selection.cmx
+   bogue__B_shortcut.cmi
+   bogue__B_shortcut.cmt
+   bogue__B_shortcut.cmx
+   bogue__B_slider.cmi
+   bogue__B_slider.cmt
+   bogue__B_slider.cmx
+   bogue__B_snapshot.cmi
+   bogue__B_snapshot.cmt
+   bogue__B_snapshot.cmx
+   bogue__B_space.cmi
+   bogue__B_space.cmt
+   bogue__B_space.cmx
+   bogue__B_style.cmi
+   bogue__B_style.cmt
+   bogue__B_style.cmx
+   bogue__B_sync.cmi
+   bogue__B_sync.cmt
+   bogue__B_sync.cmx
+   bogue__B_table.cmi
+   bogue__B_table.cmt
+   bogue__B_table.cmx
+   bogue__B_tabs.cmi
+   bogue__B_tabs.cmt
+   bogue__B_tabs.cmx
+   bogue__B_text_display.cmi
+   bogue__B_text_display.cmt
+   bogue__B_text_display.cmx
+   bogue__B_text_input.cmi
+   bogue__B_text_input.cmt
+   bogue__B_text_input.cmx
+   bogue__B_theme.cmi
+   bogue__B_theme.cmt
+   bogue__B_theme.cmx
+   bogue__B_time.cmi
+   bogue__B_time.cmt
+   bogue__B_time.cmx
+   bogue__B_timeout.cmi
+   bogue__B_timeout.cmt
+   bogue__B_timeout.cmx
+   bogue__B_trigger.cmi
+   bogue__B_trigger.cmt
+   bogue__B_trigger.cmx
+   bogue__B_tvar.cmi
+   bogue__B_tvar.cmt
+   bogue__B_tvar.cmx
+   bogue__B_update.cmi
+   bogue__B_update.cmt
+   bogue__B_update.cmx
+   bogue__B_utf8.cmi
+   bogue__B_utf8.cmt
+   bogue__B_utf8.cmx
+   bogue__B_utils.cmi
+   bogue__B_utils.cmt
+   bogue__B_utils.cmx
+   bogue__B_var.cmi
+   bogue__B_var.cmt
+   bogue__B_var.cmx
+   bogue__B_widget.cmi
+   bogue__B_widget.cmt
+   bogue__B_widget.cmx
+   bogue__B_window.cmi
+   bogue__B_window.cmt
+   bogue__B_window.cmx
+   dune-package
+   opam))
+ (libexec (bogue.cmxs))
+ (bin (boguex))
+ (share
+  (assets/README.txt
+   assets/audio/button.wav
+   assets/audio/chunk.wav
+   assets/audio/sample.wav
+   assets/audio/sia.wav
+   assets/audio/swoosh.wav
+   assets/images/background.png
+   assets/images/chl.png
+   assets/images/koala.svg
+   assets/images/nasa_black_hole_cygx1_ill.jpg
+   assets/images/w3c-logo-white.svg
+   themes/common/ACKNOWLEDGEMENTS
+   themes/common/colors/color_list.ods
+   themes/common/colors/html-color-codes.htm
+   themes/common/colors/liste.txt
+   "themes/common/font-awesome-4.6.3/Font Awesome 4.6.3 Class Explorer.html"
+   themes/common/font-awesome-4.6.3/HELP-US-OUT.txt
+   themes/common/font-awesome-4.6.3/css/font-awesome.css
+   themes/common/font-awesome-4.6.3/css/font-awesome.min.css
+   themes/common/font-awesome-4.6.3/fonts/FontAwesome.otf
+   themes/common/font-awesome-4.6.3/fonts/fontawesome-webfont.eot
+   themes/common/font-awesome-4.6.3/fonts/fontawesome-webfont.svg
+   themes/common/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf
+   themes/common/font-awesome-4.6.3/fonts/fontawesome-webfont.woff
+   themes/common/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2
+   themes/common/font-awesome-4.6.3/less/animated.less
+   themes/common/font-awesome-4.6.3/less/bordered-pulled.less
+   themes/common/font-awesome-4.6.3/less/core.less
+   themes/common/font-awesome-4.6.3/less/fixed-width.less
+   themes/common/font-awesome-4.6.3/less/font-awesome.less
+   themes/common/font-awesome-4.6.3/less/icons.less
+   themes/common/font-awesome-4.6.3/less/larger.less
+   themes/common/font-awesome-4.6.3/less/list.less
+   themes/common/font-awesome-4.6.3/less/mixins.less
+   themes/common/font-awesome-4.6.3/less/path.less
+   themes/common/font-awesome-4.6.3/less/rotated-flipped.less
+   themes/common/font-awesome-4.6.3/less/screen-reader.less
+   themes/common/font-awesome-4.6.3/less/stacked.less
+   themes/common/font-awesome-4.6.3/less/variables.less
+   themes/common/font-awesome-4.6.3/scss/_animated.scss
+   themes/common/font-awesome-4.6.3/scss/_bordered-pulled.scss
+   themes/common/font-awesome-4.6.3/scss/_core.scss
+   themes/common/font-awesome-4.6.3/scss/_fixed-width.scss
+   themes/common/font-awesome-4.6.3/scss/_icons.scss
+   themes/common/font-awesome-4.6.3/scss/_larger.scss
+   themes/common/font-awesome-4.6.3/scss/_list.scss
+   themes/common/font-awesome-4.6.3/scss/_mixins.scss
+   themes/common/font-awesome-4.6.3/scss/_path.scss
+   themes/common/font-awesome-4.6.3/scss/_rotated-flipped.scss
+   themes/common/font-awesome-4.6.3/scss/_screen-reader.scss
+   themes/common/font-awesome-4.6.3/scss/_stacked.scss
+   themes/common/font-awesome-4.6.3/scss/_variables.scss
+   themes/common/font-awesome-4.6.3/scss/font-awesome.scss
+   themes/common/fonts/81e5605d-ubuntu-font-licence-1.0.txt
+   themes/common/fonts/Ubuntu-R.ttf
+   themes/common/fonts/UbuntuMono-R.ttf
+   themes/default/bogue-icon.png
+   themes/default/bogue.conf))
+ (doc (LICENSE README.md)))
+(library
+ (name bogue)
+ (kind normal)
+ (archives (byte bogue.cma) (native bogue.cmxa))
+ (plugins (byte bogue.cma) (native bogue.cmxs))
+ (native_archives bogue.a)
+ (requires directories str tsdl tsdl-image tsdl-ttf)
+ (main_module_name Bogue)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name bogue__)
+     (visibility public)
+     (kind alias)
+     (source (path Bogue__) (impl (path bogue__.ml-gen))))
+    (name Bogue)
+    (modules
+     (module
+      (obj_name bogue__B_avar)
+      (visibility public)
+      (source (path B_avar) (impl (path b_avar.ml))))
+     (module
+      (obj_name bogue__B_border)
+      (visibility public)
+      (source (path B_border) (impl (path b_border.ml))))
+     (module
+      (obj_name bogue__B_box)
+      (visibility public)
+      (source (path B_box) (impl (path b_box.ml))))
+     (module
+      (obj_name bogue__B_button)
+      (visibility public)
+      (source (path B_button) (impl (path b_button.ml))))
+     (module
+      (obj_name bogue__B_chain)
+      (visibility public)
+      (source (path B_chain) (impl (path b_chain.ml))))
+     (module
+      (obj_name bogue__B_check)
+      (visibility public)
+      (source (path B_check) (impl (path b_check.ml))))
+     (module
+      (obj_name bogue__B_debug_window)
+      (visibility public)
+      (source (path B_debug_window) (impl (path b_debug_window.ml))))
+     (module
+      (obj_name bogue__B_draw)
+      (visibility public)
+      (source (path B_draw) (impl (path b_draw.ml))))
+     (module
+      (obj_name bogue__B_dynvar)
+      (visibility public)
+      (source (path B_dynvar) (impl (path b_dynvar.ml))))
+     (module
+      (obj_name bogue__B_empty)
+      (visibility public)
+      (source (path B_empty) (impl (path b_empty.ml))))
+     (module
+      (obj_name bogue__B_flow)
+      (visibility public)
+      (source (path B_flow) (impl (path b_flow.ml))))
+     (module
+      (obj_name bogue__B_image)
+      (visibility public)
+      (source (path B_image) (impl (path b_image.ml))))
+     (module
+      (obj_name bogue__B_label)
+      (visibility public)
+      (source (path B_label) (impl (path b_label.ml))))
+     (module
+      (obj_name bogue__B_layout)
+      (visibility public)
+      (source (path B_layout) (impl (path b_layout.ml))))
+     (module
+      (obj_name bogue__B_long_list)
+      (visibility public)
+      (source (path B_long_list) (impl (path b_long_list.ml))))
+     (module
+      (obj_name bogue__B_main)
+      (visibility public)
+      (source (path B_main) (impl (path b_main.ml))))
+     (module
+      (obj_name bogue__B_makes)
+      (visibility public)
+      (source (path B_makes) (impl (path b_makes.ml))))
+     (module
+      (obj_name bogue__B_menu)
+      (visibility public)
+      (source (path B_menu) (impl (path b_menu.ml))))
+     (module
+      (obj_name bogue__B_mixer)
+      (visibility public)
+      (source (path B_mixer) (impl (path b_mixer.ml))))
+     (module
+      (obj_name bogue__B_mouse)
+      (visibility public)
+      (source (path B_mouse) (impl (path b_mouse.ml))))
+     (module
+      (obj_name bogue__B_popup)
+      (visibility public)
+      (source (path B_popup) (impl (path b_popup.ml))))
+     (module
+      (obj_name bogue__B_print)
+      (visibility public)
+      (source (path B_print) (impl (path b_print.ml))))
+     (module
+      (obj_name bogue__B_radiolist)
+      (visibility public)
+      (source (path B_radiolist) (impl (path b_radiolist.ml))))
+     (module
+      (obj_name bogue__B_sdl_area)
+      (visibility public)
+      (source (path B_sdl_area) (impl (path b_sdl_area.ml))))
+     (module
+      (obj_name bogue__B_select)
+      (visibility public)
+      (source (path B_select) (impl (path b_select.ml))))
+     (module
+      (obj_name bogue__B_selection)
+      (visibility public)
+      (source (path B_selection) (impl (path b_selection.ml))))
+     (module
+      (obj_name bogue__B_shortcut)
+      (visibility public)
+      (source (path B_shortcut) (impl (path b_shortcut.ml))))
+     (module
+      (obj_name bogue__B_slider)
+      (visibility public)
+      (source (path B_slider) (impl (path b_slider.ml))))
+     (module
+      (obj_name bogue__B_snapshot)
+      (visibility public)
+      (source (path B_snapshot) (impl (path b_snapshot.ml))))
+     (module
+      (obj_name bogue__B_space)
+      (visibility public)
+      (source (path B_space) (impl (path b_space.ml))))
+     (module
+      (obj_name bogue__B_style)
+      (visibility public)
+      (source (path B_style) (impl (path b_style.ml))))
+     (module
+      (obj_name bogue__B_sync)
+      (visibility public)
+      (source (path B_sync) (impl (path b_sync.ml))))
+     (module
+      (obj_name bogue__B_table)
+      (visibility public)
+      (source (path B_table) (impl (path b_table.ml))))
+     (module
+      (obj_name bogue__B_tabs)
+      (visibility public)
+      (source (path B_tabs) (impl (path b_tabs.ml))))
+     (module
+      (obj_name bogue__B_text_display)
+      (visibility public)
+      (source (path B_text_display) (impl (path b_text_display.ml))))
+     (module
+      (obj_name bogue__B_text_input)
+      (visibility public)
+      (source (path B_text_input) (impl (path b_text_input.ml))))
+     (module
+      (obj_name bogue__B_theme)
+      (visibility public)
+      (source (path B_theme) (impl (path b_theme.ml))))
+     (module
+      (obj_name bogue__B_time)
+      (visibility public)
+      (source (path B_time) (impl (path b_time.ml))))
+     (module
+      (obj_name bogue__B_timeout)
+      (visibility public)
+      (source (path B_timeout) (impl (path b_timeout.ml))))
+     (module
+      (obj_name bogue__B_trigger)
+      (visibility public)
+      (source (path B_trigger) (impl (path b_trigger.ml))))
+     (module
+      (obj_name bogue__B_tvar)
+      (visibility public)
+      (source (path B_tvar) (impl (path b_tvar.ml))))
+     (module
+      (obj_name bogue__B_update)
+      (visibility public)
+      (source (path B_update) (impl (path b_update.ml))))
+     (module
+      (obj_name bogue__B_utf8)
+      (visibility public)
+      (source (path B_utf8) (impl (path b_utf8.ml))))
+     (module
+      (obj_name bogue__B_utils)
+      (visibility public)
+      (source (path B_utils) (impl (path b_utils.ml))))
+     (module
+      (obj_name bogue__B_var)
+      (visibility public)
+      (source (path B_var) (impl (path b_var.ml))))
+     (module
+      (obj_name bogue__B_widget)
+      (visibility public)
+      (source (path B_widget) (impl (path b_widget.ml))))
+     (module
+      (obj_name bogue__B_window)
+      (visibility public)
+      (source (path B_window) (impl (path b_window.ml))))
+     (module
+      (obj_name bogue)
+      (visibility public)
+      (source (path Bogue) (intf (path bogue.mli)) (impl (path bogue.ml))))))
+   (wrapped true))))

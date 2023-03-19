@@ -1,1 +1,1 @@
-src/gui.ml: Graphics
+src/gui.ml: Lablgtk3

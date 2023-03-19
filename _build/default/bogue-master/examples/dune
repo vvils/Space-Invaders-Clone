@@ -1,0 +1,19 @@
+(executable
+ (name example)
+ (modules
+  (:standard \ toplevel_example))
+ ; toplevel_example.ml should not be compiled
+ (public_name boguex)
+ (libraries bogue)
+ (package bogue))
+
+(rule
+ (alias runtest)
+ (action
+  (setenv
+   SDL_VIDEODRIVER
+   dummy
+   (setenv
+    BOGUE_DEBUG
+    true
+    (run ./example.exe 00)))))

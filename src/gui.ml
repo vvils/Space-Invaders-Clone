@@ -1,4 +1,4 @@
-open Graphics
+open Gtk
 
 let navbar = ()
 let panels = ()
@@ -6,18 +6,42 @@ let volume = ()
 let connect_spotify = ()
 let display_song_info = ()
 
+open Gtk
+
 let main () =
-  (* Initialize the Graphics library *)
-  open_graph " 640x480";
+  (* Initialize GTK *)
+  ignore (GMain.init ());
 
-  (* Draw a circle in the center of the screen *)
-  let x, y = size () in
-  let radius = min x y / 2 in
-  set_color blue;
-  fill_circle (x / 2) (y / 2) radius;
+  (* Create a new window *)
+  let window = GWindow.window ~title:"Music Player" () in
 
-  (* Wait for a mouse click before exiting *)
-  ignore (wait_next_event [ Button_down ])
+  (* Create a new vertical box *)
+  let vbox = GPack.vbox ~packing:window#add () in
 
-(* Run the main function *)
+  (* Create a new label *)
+  let label = GMisc.label ~text:"Select a song:" ~packing:vbox#add () in
+
+  (* Create a new button *)
+  let button = GButton.button ~label:"Browse..." ~packing:vbox#add () in
+
+  (* Create a new horizontal box *)
+  let hbox = GPack.hbox ~packing:vbox#add () in
+
+  (* Create a new play button *)
+  let play_button = GButton.button ~stock:`MEDIA_PLAY () in
+  hbox#add play_button#coerce;
+
+  (* Create a new stop button *)
+  let stop_button = GButton.button ~stock:`MEDIA_STOP () in
+  hbox#add stop_button#coerce;
+
+  (* Create a new volume slider *)
+  let volume_slider =
+    GRange.scale `HORIZONTAL ~draw_value:true ~packing:vbox#add ()
+  in
+
+  (* Show the window *)
+  window#show ();
+  GMain.Main.main ()
+
 let () = main ()
