@@ -1,15 +1,8 @@
-(* let load_audio_file = Failure("Unimplemented")
-
-let play_audio = Failure("Unimplemented")
-
-let pause_audio = Failure("Unimplemented")
-
-let resume_audio = Failure("Unimplemented")
-
-let skip_forward = Failure("Unimplemented")
-
-let skip_backward = Failure("Unimplemented")
-
-let adjust_volume = Failure("Unimplemented")
-
-let mute_audio = Failure("Unimplemented")  *)
+let load_audio_file = ()
+let play_audio = ()
+let pause_audio = ()
+let resume_audio = ()
+let skip_forward = ()
+let skip_backward = ()
+let adjust_volume = ()
+let mute_audio = ()

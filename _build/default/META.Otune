@@ -1,5 +1,5 @@
 description = ""
-requires = "bogue graphics lablgtk2"
+requires = "bogue graphics lablgtk2 lablgtk3"
 archive(byte) = "main.cma"
 archive(native) = "main.cmxa"
 plugin(byte) = "main.cma"

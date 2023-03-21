@@ -1,9 +1,9 @@
 # dune build
 # OCAMLPARAM: unset
 # Shared cache: disabled
-# Workspace root: /Users/benjaminyam/cs3110/FinalProject/VVeganYam
+# Workspace root: /Users/benjaminyam/cs3110/VVeganYam
 # Auto-detected concurrency: 8
-$ /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -config > /var/folders/_3/gf9nw0513z1c15l4qf8wly_c0000gn/T/dune_956c77_output
+$ /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -config > /var/folders/_3/gf9nw0513z1c15l4qf8wly_c0000gn/T/dune_56baab_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -25,16 +25,14 @@ $ /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -config > /var/folders/_3/gf9nw0
 #      map
 #        { "DUNE_OCAML_HARDCODED" : "/Users/benjaminyam/.opam/otune/lib"
 #        ; "DUNE_OCAML_STDLIB" : "/Users/benjaminyam/.opam/otune/lib/ocaml"
-#        ; "DUNE_SOURCEROOT" :
-#            "/Users/benjaminyam/cs3110/FinalProject/VVeganYam"
-#        ; "INSIDE_DUNE" :
-#            "/Users/benjaminyam/cs3110/FinalProject/VVeganYam/_build/default"
+#        ; "DUNE_SOURCEROOT" : "/Users/benjaminyam/cs3110/VVeganYam"
+#        ; "INSIDE_DUNE" : "/Users/benjaminyam/cs3110/VVeganYam/_build/default"
 #        ; "OCAMLFIND_IGNORE_DUPS_IN" :
-#            "/Users/benjaminyam/cs3110/FinalProject/VVeganYam/_build/install/default/lib"
+#            "/Users/benjaminyam/cs3110/VVeganYam/_build/install/default/lib"
 #        ; "OCAMLPATH" :
-#            "/Users/benjaminyam/cs3110/FinalProject/VVeganYam/_build/install/default/lib"
+#            "/Users/benjaminyam/cs3110/VVeganYam/_build/install/default/lib"
 #        ; "OCAMLTOP_INCLUDE_PATH" :
-#            "/Users/benjaminyam/cs3110/FinalProject/VVeganYam/_build/install/default/lib/toplevel"
+#            "/Users/benjaminyam/cs3110/VVeganYam/_build/install/default/lib/toplevel"
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
@@ -112,25 +110,83 @@ $ /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -config > /var/folders/_3/gf9nw0
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.main.objs/byte -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -no-alias-deps -opaque -open Main__ -o src/.main.objs/byte/main__Search_bar.cmo -c -impl src/search_bar.ml)
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.main.objs/byte -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -no-alias-deps -opaque -open Main__ -o src/.main.objs/byte/main__Gui.cmi -c -intf src/gui.mli)
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.main.objs/byte -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -no-alias-deps -opaque -open Main__ -o src/.main.objs/byte/main__Playlist.cmo -c -impl src/playlist.ml)
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.main.objs/byte -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -no-alias-deps -opaque -open Main__ -o src/.main.objs/byte/main__Play.cmi -c -intf src/play.mli)
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.main.objs/byte -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -no-alias-deps -opaque -open Main__ -o src/.main.objs/byte/main.cmo -c -impl src/main.ml)
 $ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.main.objs/byte -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/byte/main__Gui.cmo -c -impl src/gui.ml)
-> File "src/gui.ml", line 1, characters 5-13:
-> 1 | open Lablgtk3
->          ^^^^^^^^
-> Error: Unbound module Lablgtk3
+> File "src/gui.ml", line 1, characters 0-1:
+> 1 | #require "lablgtk3"
+>     ^
+> Error: Syntax error
 [2]
 $ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.main.objs/byte -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/byte/main__Play.cmo -c -impl src/play.ml)
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.main.objs/byte -I src/.main.objs/native -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -I bogue-master/lib/.bogue.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/native/main__Gui.cmx -c -impl src/gui.ml)
-> File "src/gui.ml", line 1, characters 5-13:
-> 1 | open Lablgtk3
->          ^^^^^^^^
-> Error: Unbound module Lablgtk3
+> File "src/play.ml", line 1, characters 4-19:
+> 1 | let load_audio_file = ()
+>         ^^^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value load_audio_file.
+> File "src/play.ml", line 2, characters 4-14:
+> 2 | let play_audio = ()
+>         ^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value play_audio.
+> File "src/play.ml", line 3, characters 4-15:
+> 3 | let pause_audio = ()
+>         ^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value pause_audio.
+> File "src/play.ml", line 4, characters 4-16:
+> 4 | let resume_audio = ()
+>         ^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value resume_audio.
+> File "src/play.ml", line 5, characters 4-16:
+> 5 | let skip_forward = ()
+>         ^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value skip_forward.
+> File "src/play.ml", line 6, characters 4-17:
+> 6 | let skip_backward = ()
+>         ^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value skip_backward.
+> File "src/play.ml", line 7, characters 4-17:
+> 7 | let adjust_volume = ()
+>         ^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value adjust_volume.
+> File "src/play.ml", line 8, characters 4-14:
+> 8 | let mute_audio = ()
+>         ^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value mute_audio.
 [2]
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.main.objs/byte -I src/.main.objs/native -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -I bogue-master/lib/.bogue.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/native/main.cmx -c -impl src/main.ml)
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.main.objs/byte -I src/.main.objs/native -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -I bogue-master/lib/.bogue.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/native/main__Search_bar.cmx -c -impl src/search_bar.ml)
-$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.main.objs/byte -I src/.main.objs/native -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -I bogue-master/lib/.bogue.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/native/main__Playlist.cmx -c -impl src/playlist.ml)
+$ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.main.objs/byte -I src/.main.objs/native -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -I bogue-master/lib/.bogue.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/native/main__Gui.cmx -c -impl src/gui.ml)
+> File "src/gui.ml", line 1, characters 0-1:
+> 1 | #require "lablgtk3"
+>     ^
+> Error: Syntax error
+[2]
 $ (cd _build/default && /Users/benjaminyam/.opam/otune/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.main.objs/byte -I src/.main.objs/native -I /Users/benjaminyam/.opam/otune/lib/bigarray-compat -I /Users/benjaminyam/.opam/otune/lib/cairo2 -I /Users/benjaminyam/.opam/otune/lib/ctypes -I /Users/benjaminyam/.opam/otune/lib/directories -I /Users/benjaminyam/.opam/otune/lib/graphics -I /Users/benjaminyam/.opam/otune/lib/integers -I /Users/benjaminyam/.opam/otune/lib/lablgtk2 -I /Users/benjaminyam/.opam/otune/lib/lablgtk3 -I /Users/benjaminyam/.opam/otune/lib/ocaml/threads -I /Users/benjaminyam/.opam/otune/lib/stdlib-shims -I /Users/benjaminyam/.opam/otune/lib/tsdl -I /Users/benjaminyam/.opam/otune/lib/tsdl-image -I /Users/benjaminyam/.opam/otune/lib/tsdl-ttf -I bogue-master/lib/.bogue.objs/byte -I bogue-master/lib/.bogue.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Main__ -o src/.main.objs/native/main__Play.cmx -c -impl src/play.ml)
+> File "src/play.ml", line 1, characters 4-19:
+> 1 | let load_audio_file = ()
+>         ^^^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value load_audio_file.
+> File "src/play.ml", line 2, characters 4-14:
+> 2 | let play_audio = ()
+>         ^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value play_audio.
+> File "src/play.ml", line 3, characters 4-15:
+> 3 | let pause_audio = ()
+>         ^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value pause_audio.
+> File "src/play.ml", line 4, characters 4-16:
+> 4 | let resume_audio = ()
+>         ^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value resume_audio.
+> File "src/play.ml", line 5, characters 4-16:
+> 5 | let skip_forward = ()
+>         ^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value skip_forward.
+> File "src/play.ml", line 6, characters 4-17:
+> 6 | let skip_backward = ()
+>         ^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value skip_backward.
+> File "src/play.ml", line 7, characters 4-17:
+> 7 | let adjust_volume = ()
+>         ^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value adjust_volume.
+> File "src/play.ml", line 8, characters 4-14:
+> 8 | let mute_audio = ()
+>         ^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value mute_audio.
+[2]

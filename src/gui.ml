@@ -1,27 +1,51 @@
+#require "lablgtk3"
+
 open Gtk
 
-let navbar = ()
+let navbar window = ()
 let panels = ()
 let volume = ()
 let connect_spotify = ()
 let display_song_info = ()
 
-open Gtk
+let create_button_with_image img_file =
+  let button = GButton.button () in
+  let pixbuf = GdkPixbuf.from_file img_file in
+  let image = Gtk.GImage.new_from_pixbuf pixbuf in
+  button#set_image (Some image);
+  button;
+  ()
 
 let main () =
   (* Initialize GTK *)
   ignore (GMain.init ());
 
   (* Create a new window *)
-  let window = GWindow.window ~title:"Music Player" () in
+  let window = GWindow.window ~title:"Otune" ~width:1080 ~height:480 () in
 
   (* Create a new vertical box *)
   let vbox = GPack.vbox ~packing:window#add () in
 
-  (* Create a new label *)
-  let label = GMisc.label ~text:"Select a song:" ~packing:vbox#add () in
+  (*the container for the upper portion of Otune*)
+  let upper_container = GPack.hbox ~packing:vbox#add () in
+  let left_vertitcal = GPack.vbox ~packing:upper_container#add () in
+  let home_button =
+    GButton.toggle_button ~packing:left_vertitcal#add ~label:"Home"
+      ~stock:
+        (GtkStock.make_icon_source.conv GtkStock.make_icon_source
+           ~filename:"images/home.png")
+      ()
+  in
+  let library_button =
+    GButton.toggle_button ~packing:left_vertitcal#add ~label:"Library" ()
+  in
 
-  (* Create a new button *)
+  (* Create a new label*)
+  let label =
+    GMisc.label ~text:"Select a song:" ~packing:upper_container#add ()
+  in
+
+  (*Create a new button *)
   let button = GButton.button ~label:"Browse..." ~packing:vbox#add () in
 
   (* Create a new horizontal box *)
