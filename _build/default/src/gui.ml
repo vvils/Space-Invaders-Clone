@@ -1,26 +1,16 @@
-#require "lablgtk3"
+(* #require "lablgtk3" *)
+(* open Gtk *)
 
-open Gtk
-
-let navbar window = ()
-(* let container = GPack.hbox ~packing:window#add () in let left_vertitcal =
-   GPack.vbox ~packing:container#add () in let home_button =
-   GButton.toggle_button ~packing:left_vertitcal#add ~label:"Home" () in let
-   library_button = GButton.toggle_button ~packing:left_vertitcal#add
-   ~label:"Library" () in window#show () *)
-
+let navbar = ()
 let panels = ()
 let volume = ()
 let connect_spotify = ()
 let display_song_info = ()
 
-let create_button_with_image img_file =
-  let button = GButton.button () in
-  let pixbuf = GdkPixbuf.from_file img_file in
-  let image = GImage.new_from_pixbuf pixbuf in
-  button#set_image (Some image);
-  button;
-  ()
+(* let create_button_with_image img_file = let button = GButton.button () in let
+   pixbuf = GdkPixbuf.from_file img_file in let image =
+   Gtk.GImage.new_from_pixbuf pixbuf in button#set_image (Some image); button;
+   () *)
 
 let main () =
   (* Initialize GTK *)
@@ -35,24 +25,22 @@ let main () =
   (*the container for the upper portion of Otune*)
   let upper_container = GPack.hbox ~packing:vbox#add () in
   let left_vertitcal = GPack.vbox ~packing:upper_container#add () in
-  let home_button =
+  let _home_button =
     GButton.toggle_button ~packing:left_vertitcal#add ~label:"Home"
-      ~stock:
-        (GtkStock.make_icon_source.conv GtkStock.make_icon_source
-           ~filename:"images/home.png")
-      ()
+    (* ~stock: (GtkStock.make_icon_source.conv GtkStock.make_icon_source
+       ~filename:"images/home.png") () *)
   in
-  let library_button =
+  let _library_button =
     GButton.toggle_button ~packing:left_vertitcal#add ~label:"Library" ()
   in
 
   (* Create a new label*)
-  let label =
+  let _label =
     GMisc.label ~text:"Select a song:" ~packing:upper_container#add ()
   in
 
   (*Create a new button *)
-  let button = GButton.button ~label:"Browse..." ~packing:vbox#add () in
+  let _button = GButton.button ~label:"Browse..." ~packing:vbox#add () in
 
   (* Create a new horizontal box *)
   let hbox = GPack.hbox ~packing:vbox#add () in
@@ -66,11 +54,24 @@ let main () =
   hbox#add stop_button#coerce;
 
   (* Create a new volume slider *)
-  let volume_slider =
+  let _volume_slider =
     GRange.scale `HORIZONTAL ~draw_value:true ~packing:vbox#add ()
   in
 
   (* Show the window *)
+  window#show ();
+  GMain.Main.main ()
+
+let () = main ()
+
+let main () =
+  ignore (GMain.init ());
+  let window = GWindow.window ~title:"Otune" ~width:1080 ~height:480 () in
+  let vbox = GPack.vbox ~packing:window#add () in
+  let _image =
+    GMisc.image ~file:"/images/play.png" ~packing:vbox#add ~icon_name:"home"
+      ~width:90 ~height:90 ()
+  in
   window#show ();
   GMain.Main.main ()
 

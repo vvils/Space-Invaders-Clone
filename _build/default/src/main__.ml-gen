@@ -3,6 +3,9 @@
 (** @canonical Main.Gui *)
 module Gui = Main__Gui
 
+(** @canonical Main.Gui2 *)
+module Gui2 = Main__Gui2
+
 (** @canonical Main.Play *)
 module Play = Main__Play
 

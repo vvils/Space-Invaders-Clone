@@ -1,1 +1,1 @@
-src/gui.ml: GButton GImage GMain GMisc GPack GRange GWindow GdkPixbuf Gtk GtkStock
+src/gui.ml: GButton GMain GMisc GPack GRange GWindow

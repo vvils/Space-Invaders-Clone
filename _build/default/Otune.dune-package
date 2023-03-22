@@ -45,7 +45,7 @@
  (archives (byte main.cma) (native main.cmxa))
  (plugins (byte main.cma) (native main.cmxs))
  (native_archives main.a)
- (requires lablgtk2 graphics bogue lablgtk3)
+ (requires graphics bogue lablgtk3)
  (main_module_name Main)
  (modes byte native)
  (modules

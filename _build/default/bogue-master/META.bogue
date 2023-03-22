@@ -1,7 +1,0 @@
-version = "20230310"
-description = ""
-requires = "directories str tsdl tsdl-image tsdl-ttf"
-archive(byte) = "bogue.cma"
-archive(native) = "bogue.cmxa"
-plugin(byte) = "bogue.cma"
-plugin(native) = "bogue.cmxs"
