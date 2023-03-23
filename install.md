@@ -1,4 +1,4 @@
-# Otune Platform
+# Otunes Platform
 
 This project seeks to build an audio player application and draws much of its naming inspiration from Apple Inc’s iTunes and much of its graphics and functionality from Spotify. The user interface will contain a search bar for which a user may search any song they like and it will play on the application. The song search will return what Spotify would return. The application will also allow users to queue, skip, pause/play, and adjust the volume of songs. There will be a seek bar as well allowing users to begin playing songs at any point during the duration of the song. As a stretch goal, we might implement the ability to like songs to be added into a singular liked playlist, and to be able to create and save custom playlists.
 
@@ -54,11 +54,11 @@ liquidsoap might recommend installing the packages lame and shine. You may do so
 You can find Bogue documentation here:
 https://garrigue.github.io/lablgtk/refdoc/index.html
 
-# Run Otune
+# Run Otunes
 
 After all dependencies are successfully installed, you can run the gui.
 
-To run the Otune gui, run the following command. You should currently be in the VVeganYam directory.
+To run the Otunes gui, run the following command. You should currently be in the VVeganYam directory.
 
 ```
 make play
@@ -117,7 +117,7 @@ opam init --bare -a -y
 A switch is a named installation of OCaml with a particular compiler version and set of packages. You can have many switches and, well, switch between them —whence the name. Create a switch for this semester’s CS 3110 by running this command:
 
 ```
-opam switch create Otune ocaml-base-compiler.4.14.0
+opam switch create Otunes ocaml-base-compiler.4.14.0
 ```
 
 If that command fails saying that the 4.14.0 compiler can’t be found, you probably installed OPAM sometime back in the past and now need to update it. Do so with opam update.
@@ -136,7 +136,7 @@ You should get output like this:
 
 ```
 #  switch         compiler                    description
-→  otune  ocaml-base-compiler.4.14.0          otune
+→  Otunes  ocaml-base-compiler.4.14.0          Otunes
 ```
 
 Continue by install ocaml packages we need:
@@ -244,7 +244,7 @@ opam init --bare -a -y --disable-sandboxing
 A switch is a named installation of OCaml with a particular compiler version and set of packages. You can have many switches and, well, switch between them —whence the name. Create a switch for this semester’s CS 3110 by running this command:
 
 ```
-opam switch create Otune ocaml-base-compiler.4.14.0
+opam switch create Otunes ocaml-base-compiler.4.14.0
 ```
 
 If that command fails saying that the 4.14.0 compiler can’t be found, you probably installed OPAM sometime back in the past and now need to update it. Do so with opam update.
@@ -263,7 +263,7 @@ You should get output like this:
 
 ```
 #  switch         compiler                    description
-→  otune  ocaml-base-compiler.4.14.0          otune
+→  Otunes  ocaml-base-compiler.4.14.0          Otunes
 ```
 
 Continue by install ocaml packages we need:

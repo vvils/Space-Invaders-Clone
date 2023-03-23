@@ -17,12 +17,12 @@ let main () =
   ignore (GMain.init ());
 
   (* Create a new window *)
-  let window = GWindow.window ~title:"Otune" ~width:1080 ~height:480 () in
+  let window = GWindow.window ~title:"Otunes" ~width:1080 ~height:480 () in
 
   (* Create a new vertical box *)
   let vbox = GPack.vbox ~packing:window#add () in
 
-  (*the container for the upper portion of Otune*)
+  (*the container for the upper portion of Otunes*)
   let upper_container = GPack.hbox ~packing:vbox#add () in
   let left_vertitcal = GPack.vbox ~packing:upper_container#add () in
   let _home_button =
@@ -66,7 +66,7 @@ let () = main ()
 
 let main () =
   ignore (GMain.init ());
-  let window = GWindow.window ~title:"Otune" ~width:1080 ~height:480 () in
+  let window = GWindow.window ~title:"Otunes" ~width:1080 ~height:480 () in
   let vbox = GPack.vbox ~packing:window#add () in
   let _image =
     GMisc.image ~file:"/images/play.png" ~packing:vbox#add ~icon_name:"home"

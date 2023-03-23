@@ -4,86 +4,86 @@
 (files
  (lib
   (META
+   Otunes.a
+   Otunes.cma
+   Otunes.cmxa
    dune-package
    gui.ml
    gui.mli
    gui2.ml
    main.ml
    opam
-   otune.a
-   otune.cma
-   otune.cmi
-   otune.cmt
-   otune.cmx
-   otune.cmxa
-   otune.ml
-   otune__Gui.cmi
-   otune__Gui.cmt
-   otune__Gui.cmti
-   otune__Gui.cmx
-   otune__Gui2.cmi
-   otune__Gui2.cmt
-   otune__Gui2.cmx
-   otune__Main.cmi
-   otune__Main.cmt
-   otune__Main.cmx
-   otune__Play.cmi
-   otune__Play.cmt
-   otune__Play.cmti
-   otune__Play.cmx
-   otune__Playlist.cmi
-   otune__Playlist.cmt
-   otune__Playlist.cmx
-   otune__Search_bar.cmi
-   otune__Search_bar.cmt
-   otune__Search_bar.cmx
+   otunes.cmi
+   otunes.cmt
+   otunes.cmx
+   otunes.ml
+   otunes__Gui.cmi
+   otunes__Gui.cmt
+   otunes__Gui.cmti
+   otunes__Gui.cmx
+   otunes__Gui2.cmi
+   otunes__Gui2.cmt
+   otunes__Gui2.cmx
+   otunes__Main.cmi
+   otunes__Main.cmt
+   otunes__Main.cmx
+   otunes__Play.cmi
+   otunes__Play.cmt
+   otunes__Play.cmti
+   otunes__Play.cmx
+   otunes__Playlist.cmi
+   otunes__Playlist.cmt
+   otunes__Playlist.cmx
+   otunes__Search_bar.cmi
+   otunes__Search_bar.cmt
+   otunes__Search_bar.cmx
    play.ml
    play.mli
    playlist.ml
    search_bar.ml))
- (libexec (otune.cmxs))
+ (libexec (Otunes.cmxs))
  (doc (README.md)))
 (library
  (name Otune)
  (kind normal)
- (archives (byte otune.cma) (native otune.cmxa))
- (plugins (byte otune.cma) (native otune.cmxs))
- (native_archives otune.a)
+ (archives (byte Otunes.cma) (native Otunes.cmxa))
+ (plugins (byte Otunes.cma) (native Otunes.cmxs))
+ (native_archives Otunes.a)
  (requires graphics bogue lablgtk3)
- (main_module_name Otune)
+ (main_module_name Otunes)
  (modes byte native)
  (modules
   (wrapped
    (group
     (alias
-     (obj_name otune)
+     (obj_name otunes)
      (visibility public)
      (kind alias)
-     (source (path Otune) (impl (path otune.ml-gen))))
-    (name Otune)
+     (source (path Otunes) (impl (path otunes.ml-gen))))
+    (name Otunes)
     (modules
      (module
-      (obj_name otune__Gui)
+      (obj_name otunes__Gui)
       (visibility public)
       (source (path Gui) (intf (path gui.mli)) (impl (path gui.ml))))
      (module
-      (obj_name otune__Gui2)
+      (obj_name otunes__Gui2)
       (visibility public)
       (source (path Gui2) (impl (path gui2.ml))))
      (module
-      (obj_name otune__Main)
+      (obj_name otunes__Main)
       (visibility public)
       (source (path Main) (impl (path main.ml))))
      (module
-      (obj_name otune__Play)
+      (obj_name otunes__Play)
       (visibility public)
       (source (path Play) (intf (path play.mli)) (impl (path play.ml))))
      (module
-      (obj_name otune__Playlist)
+      (obj_name otunes__Playlist)
       (visibility public)
       (source (path Playlist) (impl (path playlist.ml))))
      (module
-      (obj_name otune__Search_bar)
+      (obj_name otunes__Search_bar)
       (visibility public)
       (source (path Search_bar) (impl (path search_bar.ml))))))
    (wrapped true))))
