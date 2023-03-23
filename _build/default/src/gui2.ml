@@ -2,7 +2,17 @@ open Bogue
 module W = Widget
 module L = Layout
 
-let image_file = "/images/play.png"
+let image_file = "%assets/images/twice.jpg"
+
+let w1 =
+  let home_icon = W.icon "home" in
+  let home_l = W.button ~border_radius:100 "  Home  " in
+  L.flat_of_w [ home_icon; home_l ]
+
+let testing_action =
+  let home_icon = W.icon "home" in
+  let home_l = W.button "  Home  " in
+  L.flat_of_w [ home_icon; home_l ]
 
 let main () =
   (*home tab*)
@@ -16,7 +26,7 @@ let main () =
   let lib_tab = L.flat_of_w [ lib_icon; lib_label ] in
 
   (*navbar *)
-  let nav_bar = L.tower [ home_tab; lib_tab ] in
+  let nav_bar = L.tower ~clip:true [ home_tab; lib_tab ] in
 
   (* Album Playlist Panel *)
   let ap_label = W.label "Albums/Playlist" in
@@ -79,9 +89,19 @@ let main () =
 
   let botton_panel = L.flat [ left_side_music; center; right_box ] in
 
-  let layout = L.tower [ top_panel; botton_panel ] in
+  let app_title = L.tower_of_w [ W.label "Otunes" ] in
 
-  let board = Bogue.of_layout layout in
+  let layout = L.tower [ app_title; top_panel; botton_panel ] in
+
+  let board = Bogue.of_layouts [ testing_action; layout ] in
+
+  (* let window = Window.create layout in *)
+
+  (* let _win = Window.set_size window in *)
+  (* let board = Bogue.of_windows [ window ] in *)
+  W.on_click ~click:(fun _ -> L.set_show main_panel false) lib_label;
+  W.on_click ~click:(fun _ -> L.set_show main_panel true) home_l;
+
   Bogue.run board
 
 let () =
