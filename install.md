@@ -56,18 +56,12 @@ https://garrigue.github.io/lablgtk/refdoc/index.html
 
 # Run Otune
 
-After all dependencies are successfully installed, you can run the BaseStation on your
-computer and start working with the minibot.
+After all dependencies are successfully installed, you can run the gui.
 
-The BaseStation is the intermediary that manages information flow between the minibot and
-hardware to the software and GUI. BaseStation runs on `cs-reminibot/basestation/base_station_interface.py` and is a
-simple web application that runs on HTTP.
-
-To run the BaseStation, run the following command. You should currently be in the cs-reminibot directory.
-**If you want the use the speech recognition feature of the Minibot platform, run this command in your regular terminal (not VSCode terminal). This is because VSCode does not have permission to access your computer's microphone.**
+To run the Otune gui, run the following command. You should currently be in the VVeganYam directory.
 
 ```
-./run_BS.sh
+make play
 ```
 
 # Operating System Specific Guides to Install Initial Requirements
