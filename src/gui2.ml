@@ -104,6 +104,9 @@ let main () =
 
   Bogue.run board
 
+(* Wilson's functions*)
+
 let () =
   main ();
   Bogue.quit ()
+
