@@ -84,6 +84,9 @@ let main () =
   let board = Bogue.of_layout layout in
   Bogue.run board
 
+(* Wilson's functions*)
+
 let () =
   main ();
   Bogue.quit ()
+
