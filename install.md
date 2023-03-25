@@ -46,10 +46,14 @@ opam install liquidsoap
 Then install what is recommened by copy and pasting below into terminal:
 
 ```
-opam install -y mad ffmpeg cry taglib
+opam install -y mad ffmpeg cry taglib fdkaac
 ```
 
 liquidsoap might recommend installing the packages lame and shine. You may do so, however it is not needed.
+
+```
+opam install -y lame shine
+```
 
 You can find Bogue documentation here:
 https://garrigue.github.io/lablgtk/refdoc/index.html
@@ -63,6 +67,14 @@ To run the Otunes gui, run the following command. You should currently be in the
 ```
 make play
 ```
+
+To stream the music go into a browser. Go to
+
+```
+http://localhost:8000/1
+```
+
+Hit the play button in the gui.
 
 # Operating System Specific Guides to Install Initial Requirements
 
@@ -269,7 +281,7 @@ You should get output like this:
 Continue by install ocaml packages we need:
 
 ```
-opam install -y utop odoc ounit2 qcheck bisect_ppx menhir ocaml-lsp-server ocamlformat ocamlformat-rpc bogue lablgtk liquidsoap mad ffmpeg lame shine cry taglib
+opam install -y utop odoc ounit2 qcheck bisect_ppx menhir ocaml-lsp-server ocamlformat ocamlformat-rpc
 ```
 
 [Continue with the remaining installation steps](#Continue)

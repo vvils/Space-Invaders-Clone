@@ -49,7 +49,7 @@
  (archives (byte Otunes.cma) (native Otunes.cmxa))
  (plugins (byte Otunes.cma) (native Otunes.cmxs))
  (native_archives Otunes.a)
- (requires graphics bogue lablgtk3)
+ (requires graphics bogue lablgtk3 cmdliner)
  (main_module_name Otunes)
  (modes byte native)
  (modules

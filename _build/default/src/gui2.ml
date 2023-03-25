@@ -1,9 +1,9 @@
 open Bogue
+open Play
 module W = Widget
 module L = Layout
 
-let image_file = "%assets/images/twice.jpg"
-
+(*Play audio by calling an Ocaml function*)
 let w1 =
   let home_icon = W.icon "home" in
   let home_l = W.button ~border_radius:100 "  Home  " in
@@ -60,11 +60,11 @@ let main () =
   (* music playing panel *)
   (*left side of music*)
   let song_title = W.label ~size:10 "Song Title" in
-  let artist_name = W.label ~size:10 "artist" in
+  let artist_name = W.label ~size:10 "     artist" in
   let description_tower = L.tower_of_w [ song_title; artist_name ] in
   let song_image = W.icon "music" in
   let music_widget = L.flat_of_w [ song_image ] in
-  let left_side_music = L.flat [ music_widget; description_tower ] in
+  let left_side_music = L.flat ~sep:10 [ music_widget; description_tower ] in
 
   (* music control center *)
   let play_previous = W.button ~label:(Label.icon "backward") "" in
@@ -91,9 +91,9 @@ let main () =
 
   let app_title = L.tower_of_w [ W.label "Otunes" ] in
 
-  let layout = L.tower [ app_title; top_panel; botton_panel ] in
+  let layout = L.tower ~clip:true [ app_title; top_panel; botton_panel ] in
 
-  let board = Bogue.of_layouts [ testing_action; layout ] in
+  let board = Bogue.of_layouts [ layout ] in
 
   (* let window = Window.create layout in *)
 
@@ -101,7 +101,7 @@ let main () =
   (* let board = Bogue.of_windows [ window ] in *)
   W.on_click ~click:(fun _ -> L.set_show main_panel false) lib_label;
   W.on_click ~click:(fun _ -> L.set_show main_panel true) home_l;
-
+  W.on_click ~click:(fun _ -> load_audio_file ()) play;
   Bogue.run board
 
 let () =

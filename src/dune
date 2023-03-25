@@ -1,4 +1,4 @@
 (library
  (name Otunes)
  (public_name Otune)
- (libraries graphics bogue lablgtk3))
+ (libraries graphics bogue lablgtk3 cmdliner))
