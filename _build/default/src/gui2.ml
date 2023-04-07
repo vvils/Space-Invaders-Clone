@@ -2,6 +2,10 @@ open Bogue
 open Play
 module W = Widget
 module L = Layout
+module T = Trigger
+(* open Tsdl *)
+
+let section_title s = L.flat_of_w [ W.label ~size:12 ~fg:Draw.(opaque grey) s ]
 
 (*Play audio by calling an Ocaml function*)
 let w1 =
@@ -15,6 +19,7 @@ let testing_action =
   L.flat_of_w [ home_icon; home_l ]
 
 let main () =
+  let width = 400 in
   (*home tab*)
   let home_icon = W.icon "home" in
   let home_l = W.button "  Home  " in
@@ -59,6 +64,9 @@ let main () =
 
   (* music playing panel *)
   (*left side of music*)
+  (* let image_title = section_title "Image display" in let image = W.image
+     ~w:(width / 2) "images/play.png" in let image_layout = L.tower ~margins:0 [
+     image_title; L.resident image ] in *)
   let song_title = W.label ~size:10 "Song Title" in
   let artist_name = W.label ~size:10 "     artist" in
   let description_tower = L.tower_of_w [ song_title; artist_name ] in
@@ -91,7 +99,24 @@ let main () =
 
   let app_title = L.tower_of_w [ W.label "Otunes" ] in
 
-  let layout = L.tower ~clip:true [ app_title; top_panel; botton_panel ] in
+  let quit_title = section_title "Popup window" in
+  let quit_btn = W.button ~border_radius:10 "QUIT" in
+  let yes_action () = T.push_quit () in
+  let no_action () = () in
+
+  let quit_layout =
+    L.tower ~margins:0 ~align:Draw.Center [ quit_title; L.resident quit_btn ]
+  in
+
+  let bottom =
+    L.flat ~align:Draw.Max ~margins:0 [ Space.hfill (); quit_layout ]
+  in
+  L.set_width bottom width;
+
+  (* layout *)
+  let layout =
+    L.tower ~clip:true [ app_title; top_panel; botton_panel; bottom ]
+  in
 
   let board = Bogue.of_layouts [ layout ] in
 
@@ -102,6 +127,12 @@ let main () =
   W.on_click ~click:(fun _ -> L.set_show main_panel false) lib_label;
   W.on_click ~click:(fun _ -> L.set_show main_panel true) home_l;
   W.on_click ~click:(fun _ -> load_audio_file ()) play;
+
+  let release _ =
+    Popup.yesno ~w:100 ~h:50 "Really quit?" ~yes_action ~no_action layout
+  in
+  W.on_button_release ~release quit_btn;
+
   Bogue.run board
 
 let () =

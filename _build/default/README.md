@@ -16,3 +16,6 @@ documentation : https://garrigue.github.io/lablgtk/refdoc/index.html
 opam install graphics
 
 opam install bogue
+
+Note to self:
+When we have problem with commiting large file, we reverted our commits and force pushed.

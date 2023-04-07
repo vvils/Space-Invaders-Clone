@@ -7,6 +7,7 @@
    Otunes.a
    Otunes.cma
    Otunes.cmxa
+   demo.ml
    dune-package
    gui.ml
    gui.mli
@@ -17,6 +18,9 @@
    otunes.cmt
    otunes.cmx
    otunes.ml
+   otunes__Demo.cmi
+   otunes__Demo.cmt
+   otunes__Demo.cmx
    otunes__Gui.cmi
    otunes__Gui.cmt
    otunes__Gui.cmti
@@ -34,13 +38,21 @@
    otunes__Playlist.cmi
    otunes__Playlist.cmt
    otunes__Playlist.cmx
+   otunes__Ranking.cmi
+   otunes__Ranking.cmt
+   otunes__Ranking.cmx
    otunes__Search_bar.cmi
    otunes__Search_bar.cmt
    otunes__Search_bar.cmx
+   otunes__Util.cmi
+   otunes__Util.cmt
+   otunes__Util.cmx
    play.ml
    play.mli
    playlist.ml
-   search_bar.ml))
+   ranking.ml
+   search_bar.ml
+   util.ml))
  (libexec (Otunes.cmxs))
  (doc (README.md)))
 (library
@@ -63,6 +75,10 @@
     (name Otunes)
     (modules
      (module
+      (obj_name otunes__Demo)
+      (visibility public)
+      (source (path Demo) (impl (path demo.ml))))
+     (module
       (obj_name otunes__Gui)
       (visibility public)
       (source (path Gui) (intf (path gui.mli)) (impl (path gui.ml))))
@@ -83,7 +99,15 @@
       (visibility public)
       (source (path Playlist) (impl (path playlist.ml))))
      (module
+      (obj_name otunes__Ranking)
+      (visibility public)
+      (source (path Ranking) (impl (path ranking.ml))))
+     (module
       (obj_name otunes__Search_bar)
       (visibility public)
-      (source (path Search_bar) (impl (path search_bar.ml))))))
+      (source (path Search_bar) (impl (path search_bar.ml))))
+     (module
+      (obj_name otunes__Util)
+      (visibility public)
+      (source (path Util) (impl (path util.ml))))))
    (wrapped true))))
