@@ -99,6 +99,7 @@ let main () =
 
   let app_title = L.tower_of_w [ W.label "Otunes" ] in
 
+  (* quit button *)
   let quit_title = section_title "Popup window" in
   let quit_btn = W.button ~border_radius:10 "QUIT" in
   let yes_action () = T.push_quit () in

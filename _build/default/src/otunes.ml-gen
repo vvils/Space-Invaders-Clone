@@ -12,11 +12,20 @@ module Gui2 = Otunes__Gui2
 (** @canonical Otunes.Main *)
 module Main = Otunes__Main
 
+(** @canonical Otunes.New_gui *)
+module New_gui = Otunes__New_gui
+
+(** @canonical Otunes.Parse *)
+module Parse = Otunes__Parse
+
 (** @canonical Otunes.Play *)
 module Play = Otunes__Play
 
 (** @canonical Otunes.Playlist *)
 module Playlist = Otunes__Playlist
+
+(** @canonical Otunes.Popup *)
+module Popup = Otunes__Popup
 
 (** @canonical Otunes.Ranking *)
 module Ranking = Otunes__Ranking

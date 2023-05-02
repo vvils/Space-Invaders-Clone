@@ -13,6 +13,7 @@
    gui.mli
    gui2.ml
    main.ml
+   new_gui.ml
    opam
    otunes.cmi
    otunes.cmt
@@ -31,6 +32,12 @@
    otunes__Main.cmi
    otunes__Main.cmt
    otunes__Main.cmx
+   otunes__New_gui.cmi
+   otunes__New_gui.cmt
+   otunes__New_gui.cmx
+   otunes__Parse.cmi
+   otunes__Parse.cmt
+   otunes__Parse.cmx
    otunes__Play.cmi
    otunes__Play.cmt
    otunes__Play.cmti
@@ -38,6 +45,9 @@
    otunes__Playlist.cmi
    otunes__Playlist.cmt
    otunes__Playlist.cmx
+   otunes__Popup.cmi
+   otunes__Popup.cmt
+   otunes__Popup.cmx
    otunes__Ranking.cmi
    otunes__Ranking.cmt
    otunes__Ranking.cmx
@@ -47,9 +57,11 @@
    otunes__Util.cmi
    otunes__Util.cmt
    otunes__Util.cmx
+   parse.ml
    play.ml
    play.mli
    playlist.ml
+   popup.ml
    ranking.ml
    search_bar.ml
    util.ml))
@@ -91,6 +103,14 @@
       (visibility public)
       (source (path Main) (impl (path main.ml))))
      (module
+      (obj_name otunes__New_gui)
+      (visibility public)
+      (source (path New_gui) (impl (path new_gui.ml))))
+     (module
+      (obj_name otunes__Parse)
+      (visibility public)
+      (source (path Parse) (impl (path parse.ml))))
+     (module
       (obj_name otunes__Play)
       (visibility public)
       (source (path Play) (intf (path play.mli)) (impl (path play.ml))))
@@ -98,6 +118,10 @@
       (obj_name otunes__Playlist)
       (visibility public)
       (source (path Playlist) (impl (path playlist.ml))))
+     (module
+      (obj_name otunes__Popup)
+      (visibility public)
+      (source (path Popup) (impl (path popup.ml))))
      (module
       (obj_name otunes__Ranking)
       (visibility public)
