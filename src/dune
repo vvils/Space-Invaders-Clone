@@ -1,4 +1,4 @@
 (library
  (name Otunes)
  (public_name Otune)
- (libraries graphics bogue lablgtk3 cmdliner))
+ (libraries graphics bogue lablgtk3 cmdliner spotify-web-api lwt))
