@@ -45,15 +45,19 @@
    otunes__Playlist.cmi
    otunes__Playlist.cmt
    otunes__Playlist.cmx
-   otunes__Popup.cmi
-   otunes__Popup.cmt
-   otunes__Popup.cmx
    otunes__Ranking.cmi
    otunes__Ranking.cmt
    otunes__Ranking.cmx
    otunes__Search_bar.cmi
    otunes__Search_bar.cmt
    otunes__Search_bar.cmx
+   otunes__Songfuncs.cmi
+   otunes__Songfuncs.cmt
+   otunes__Songfuncs.cmti
+   otunes__Songfuncs.cmx
+   otunes__Spotify.cmi
+   otunes__Spotify.cmt
+   otunes__Spotify.cmx
    otunes__Util.cmi
    otunes__Util.cmt
    otunes__Util.cmx
@@ -61,9 +65,11 @@
    play.ml
    play.mli
    playlist.ml
-   popup.ml
    ranking.ml
    search_bar.ml
+   songfuncs.ml
+   songfuncs.mli
+   spotify.ml
    util.ml))
  (libexec (Otunes.cmxs))
  (doc (README.md)))
@@ -73,7 +79,7 @@
  (archives (byte Otunes.cma) (native Otunes.cmxa))
  (plugins (byte Otunes.cma) (native Otunes.cmxs))
  (native_archives Otunes.a)
- (requires graphics bogue lablgtk3 cmdliner)
+ (requires graphics bogue lablgtk3 cmdliner spotify-web-api yojson)
  (main_module_name Otunes)
  (modes byte native)
  (modules
@@ -119,10 +125,6 @@
       (visibility public)
       (source (path Playlist) (impl (path playlist.ml))))
      (module
-      (obj_name otunes__Popup)
-      (visibility public)
-      (source (path Popup) (impl (path popup.ml))))
-     (module
       (obj_name otunes__Ranking)
       (visibility public)
       (source (path Ranking) (impl (path ranking.ml))))
@@ -130,6 +132,17 @@
       (obj_name otunes__Search_bar)
       (visibility public)
       (source (path Search_bar) (impl (path search_bar.ml))))
+     (module
+      (obj_name otunes__Songfuncs)
+      (visibility public)
+      (source
+       (path Songfuncs)
+       (intf (path songfuncs.mli))
+       (impl (path songfuncs.ml))))
+     (module
+      (obj_name otunes__Spotify)
+      (visibility public)
+      (source (path Spotify) (impl (path spotify.ml))))
      (module
       (obj_name otunes__Util)
       (visibility public)

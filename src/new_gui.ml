@@ -95,16 +95,60 @@ let fable =
 let after_display () = ignore (W.label "bye")
 
 let main () =
-  let input = W.text_input ~max_size:200 ~prompt:"Enter your name" () in
+  (* let input = W.text_input ~max_size:200 ~prompt:"Enter your name" () in *)
   let label = W.label ~size:40 "Hello!" in
-  let survey =
-    L.tower [ L.resident ~w:400 input; L.resident ~w:400 ~h:200 label ]
-  in
+  
+
 
   let before_survey_display () =
-    let text = W.get_text input in
-    W.set_text label ("Hello " ^ text ^ "!")
-  in
+    (* let text = W.get_text input in *)
+    W.set_text label ("Questionnaire Time!") in
+    (* let question_one = W.html ~h:20 ("<strong> What are your favorite genres? </strong>") in *)
+
+    let check_title = W.html ~h:20 ("<strong> What are your favorite music genres? </strong>") in 
+    let check1 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "Pop" ] in let check2 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "Classical" ] in let check3 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "Rock" ] in let check4 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "Country" ] in let question_1 = L.tower
+    ~margins:10 ~sep:0 [ L.resident ~w:400 ~h:20 check_title; check1; check2; check3; check4 ] in
+
+    let check_title = W.html ~h:20 ("<strong> What are your favorite eras of music? </strong>") in 
+    let check1 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "pre-1800s" ] in let check2 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "1850-1900s" ] in let check3 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "1900-1950s" ] in let check4 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "1950-2000s" ] in let check5 = L.flat_of_w
+    ~sep:2 [ W.check_box (); W.label "2000-Present" ] in let question_2 = L.tower
+    ~margins:10 ~sep:0 [ L.resident ~w:400 ~h:20 check_title; check1; check2; check3; check4;check5 ] in
+
+      (* let radio_title = section_title "Radio buttons. Only one can be selected."
+     in let radio = Radiolist.vertical [| "select this"; "or rather that";
+     "maybe this"; "worst case, this one"; |] in let radio_layout = L.tower
+     ~margins:0 ~sep:0 [ radio_title; Radiolist.layout radio ] in *)
+
+    let survey =
+      L.tower [ L.resident ~w:400 ~h:70 label; question_1; question_2 ]
+    in
+    
+    (* let question_1 = "What ?" in let text = W.text_display ~w:width ~h:630 question_1 in
+
+    let text_ref =
+      W.rich_text ~w:width ~h:20 Text_display.(page [ italic (para song_ref) ])
+    in
+    let text_layout =
+      L.tower
+        [  L.resident text; L.resident text_ref ]
+    in
+    let text_container = L.make_clip ~h:340 text_layout in
+
+    let survey_page =
+      L.tower
+        [
+          text_container;
+        ]
+    in *)
+
   let width = 400 in
 
   (* quit button *)
@@ -271,7 +315,8 @@ let main () =
         slider_layout;
         hline width;
         buttons_layout;
-        hline width (* bottom; *);
+        hline width 
+        (* bottom; *);
       ]
   in
 

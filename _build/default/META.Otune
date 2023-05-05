@@ -1,5 +1,5 @@
 description = ""
-requires = "bogue cmdliner graphics lablgtk3"
+requires = "bogue cmdliner graphics lablgtk3 spotify-web-api yojson"
 archive(byte) = "Otunes.cma"
 archive(native) = "Otunes.cmxa"
 plugin(byte) = "Otunes.cma"

@@ -24,14 +24,17 @@ module Play = Otunes__Play
 (** @canonical Otunes.Playlist *)
 module Playlist = Otunes__Playlist
 
-(** @canonical Otunes.Popup *)
-module Popup = Otunes__Popup
-
 (** @canonical Otunes.Ranking *)
 module Ranking = Otunes__Ranking
 
 (** @canonical Otunes.Search_bar *)
 module Search_bar = Otunes__Search_bar
+
+(** @canonical Otunes.Songfuncs *)
+module Songfuncs = Otunes__Songfuncs
+
+(** @canonical Otunes.Spotify *)
+module Spotify = Otunes__Spotify
 
 (** @canonical Otunes.Util *)
 module Util = Otunes__Util
