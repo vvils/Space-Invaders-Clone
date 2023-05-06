@@ -17,6 +17,18 @@ let title_list_test (name : string) (json : Yojson.Basic.t)
     (expected_output : string list) : test =
   name >:: fun _ -> assert_equal expected_output (title_list (from_json json))
 
+let genre_list_test (name : string) (json : Yojson.Basic.t)
+    (expected_output : string list) : test =
+  name >:: fun _ -> assert_equal expected_output (genre_list (from_json json))
+
+let album_list_test (name : string) (json : Yojson.Basic.t)
+    (expected_output : string list) : test =
+  name >:: fun _ -> assert_equal expected_output (album_list (from_json json))
+
+let ytlinks_list_test (name : string) (json : Yojson.Basic.t)
+    (expected_output : string list) : test =
+  name >:: fun _ -> assert_equal expected_output (ytlinks_list (from_json json))
+
 let suite =
   "test suite for final project, OTunes"
   >::: [
@@ -68,6 +80,26 @@ let suite =
              "In Da Club";
            ];
          title_list_test "for songs2" songs2 [];
+         genre_list_test "for songs" songs
+           [ "Classical"; "Hip Hop"; "Jazz"; "Pop"; "Rock" ];
+         genre_list_test "for songs2" songs2 [];
+         album_list_test "for songs" songs
+           [
+             "Bad Blood";
+             "Thriller";
+             "What a Wonderful World";
+             "Get Rich or Die Tryin'";
+           ];
+         album_list_test "for songs2" songs2 [];
+         ytlinks_list_test "for songs" songs
+           [
+             "https://www.youtube.com/watch?v=F90Cw4l-8NY";
+             "https://www.youtube.com/watch?v=c1iZXyWLnXg";
+             "https://www.youtube.com/watch?v=Zi_XLOBDo_Y";
+             "https://www.youtube.com/watch?v=VqhCQZaH4Vs";
+             "https://www.youtube.com/watch?v=5qm8PH4xAss";
+           ];
+         ytlinks_list_test "for songs2" songs2 [];
        ]
 
 let _ = run_test_tt_main suite

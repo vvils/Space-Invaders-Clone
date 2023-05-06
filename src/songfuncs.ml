@@ -36,16 +36,22 @@ let rec title_list lst =
   | h :: t -> h.title :: title_list t
 
 let genre_list lst =
-  match lst with
-  | _ -> failwith "todo"
+  let rec helper lst =
+    match lst with
+    | [] -> []
+    | h :: t -> h.genre :: helper t
+  in
+  List.sort_uniq compare (helper lst)
 
-let album_list lst =
+let rec album_list lst =
   match lst with
-  | _ -> failwith "todo"
+  | [] -> []
+  | h :: t -> if h.album = "" then album_list t else h.album :: album_list t
 
-let ytlinks_list lst =
+let rec ytlinks_list lst =
   match lst with
-  | _ -> failwith "todo"
+  | [] -> []
+  | h :: t -> h.ytlink :: ytlinks_list t
 
 let song_by_title title lst =
   match (title, lst) with
