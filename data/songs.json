@@ -8,6 +8,42 @@
       "length": "3:34",
       "date": "2013",
       "ytlink": "https://www.youtube.com/watch?v=F90Cw4l-8NY"
+    },
+    {
+      "title": "Für Elise",
+      "artist": "Ludwig van Beethoven",
+      "album": "",
+      "genre": "Classical",
+      "length": "2:55",
+      "date": "1867",
+      "ytlink": "https://www.youtube.com/watch?v=c1iZXyWLnXg"
+    },
+    {
+      "title": "Billie Jean",
+      "artist": "Michael Jackson",
+      "album": "Thriller",
+      "genre": "Pop",
+      "length": "4:54",
+      "date": "1983",
+      "ytlink": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y"
+    },
+    {
+      "title": "What A Wonderful World",
+      "artist": "Louis Armstrong",
+      "album": "What a Wonderful World",
+      "genre": "Jazz",
+      "length": "2:21",
+      "date": "1967",
+      "ytlink": "https://www.youtube.com/watch?v=VqhCQZaH4Vs"
+    },
+    {
+      "title": "In Da Club",
+      "artist": "50 Cent",
+      "album": "Get Rich or Die Tryin'",
+      "genre": "Hip Hop",
+      "length": "3:13",
+      "date": "2003",
+      "ytlink": "https://www.youtube.com/watch?v=5qm8PH4xAss"
     }
   ]
 }

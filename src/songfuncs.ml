@@ -30,9 +30,10 @@ let rec to_string_list lst =
       (h.title, h.artist, h.album, h.genre, h.length, h.date, h.ytlink)
       :: to_string_list t
 
-let title_list (lst : song list) : string list =
+let rec title_list lst =
   match lst with
-  | _ -> failwith "todo"
+  | [] -> []
+  | h :: t -> h.title :: title_list t
 
 let genre_list lst =
   match lst with
