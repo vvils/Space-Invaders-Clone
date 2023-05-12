@@ -28,14 +28,14 @@ val ytlinks_list : song list -> string list
 val song_by_title :
   string ->
   song list ->
-  string * string * string * string * string * string * string
+  (string * string * string * string * string * string * string) list
 (** [song_by_title s j] returns a song in tuple form where the title of the song
     is s.*)
 
 val song_list_by_artist :
   string ->
   song list ->
-  string * string * string * string * string * string * string list
+  (string * string * string * string * string * string * string) list
 (** [song_list_by_artist s j] returns a song list in tuple list form where the
     artist of each song is s.*)
 
@@ -44,3 +44,11 @@ val ytlink_by_title : string -> song list -> string
 
 val artist_by_title : string -> song list -> string
 (** [artist_by_title s j] returns the artist of the song with title s*)
+
+val json_with_string : string -> string -> unit
+(** [json_with_string s1 s2] creates a new json called [s1] with string [s2]*)
+
+val add_song_to_json :
+  string -> string -> string -> string -> string -> string -> string -> unit
+(** [add_song_to_json s1 s2 s3 s4 s5 s6 s7] adds a new song with all its
+    information provided to the songs json*)
