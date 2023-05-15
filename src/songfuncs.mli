@@ -52,3 +52,9 @@ val add_song_to_json :
   string -> string -> string -> string -> string -> string -> string -> unit
 (** [add_song_to_json s1 s2 s3 s4 s5 s6 s7] adds a new song with all its
     information provided to the songs json*)
+
+val remove_song_to_json : string -> string -> song list -> unit
+(** [remove_song_to_json ti ar lst] removes a song given its title and artist
+    from the songs json*)
+
+(*val modify_song_to_json : *)

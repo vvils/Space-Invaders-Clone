@@ -4,6 +4,7 @@ open Songfuncs
 
 let songs = Yojson.Basic.from_file "songs.json"
 let songs2 = Yojson.Basic.from_file "songs2.json"
+let testing = Yojson.Basic.from_file "SongList"
 
 let to_string_list_test (name : string) (json : Yojson.Basic.t)
     (expected_output :
@@ -53,12 +54,17 @@ let artist_by_title_test (name : string) (title : string)
   name >:: fun _ ->
   assert_equal expected_output (artist_by_title title (from_json json))
 
-let add_song_test (name : string) (title : string) (artist : string)
-    (album : string) (genre : string) (length : string) (date : string)
-    (ytlink : string) (expected_output : unit) : test =
+(* let add_song_test (name : string) (title : string) (artist : string) (album :
+   string) (genre : string) (length : string) (date : string) (ytlink : string)
+   (expected_output : unit) : test = name >:: fun _ -> assert_equal
+   expected_output (add_song_to_json title artist album genre length date
+   ytlink) *)
+
+let remove_song_test (name : string) (title : string) (artist : string)
+    (json : Yojson.Basic.t) (expected_output : unit) : test =
   name >:: fun _ ->
   assert_equal expected_output
-    (add_song_to_json title artist album genre length date ytlink)
+    (remove_song_to_json title artist (from_json json))
 
 (* let string_json_test (name : string) (title : string) (str : string)
    (expected_output : unit) : test = name >:: fun _ -> assert_equal
@@ -76,9 +82,11 @@ let suite =
   >::: [
          to_string_t "" songs2 {|{"songs":[]}|};
          (* string_json_test "TESTING STRING" "t" {| {} |} (); *)
-         add_song_test "Adds a song to the song json" {|"extitle"|}
-           {|"exartisit"|} {|"exalbum"|} {|"exgenre"|} {|"exlength"|}
-           {|"exdate"|} {|"exytlink"|} ();
+         (* add_song_test "Adds a song to the song json" {|"extitle"|}
+            {|"exartist"|} {|"exalbum"|} {|"exgenre"|} {|"exlength"|}
+            {|"exdate"|} {|"exytlink"|} (); *)
+         remove_song_test "Removes a song to song json" "extitle" "exartist"
+           testing ();
          to_string_list_test "for songs" songs
            [
              ( "Pompeii",

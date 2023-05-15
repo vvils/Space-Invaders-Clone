@@ -83,11 +83,14 @@ let rec artist_by_title title lst =
 
 let json_with_string title str = to_file title (from_string str)
 
-(** Unable to add to an empty song list yet, and can add duplicate songs which
-    needs to be fixed.*)
+(** Can add the same song multiple times which needs to be fixed?*)
 let add_song_to_json ti ar al ge le da yt =
-  let strin = Yojson.Basic.to_string (Yojson.Basic.from_file "t") in
-  let trimmed = String.sub strin 0 (String.length strin - 2) ^ "," in
+  let strin = Yojson.Basic.to_string (Yojson.Basic.from_file "SongListAux") in
+  let trimmed =
+    if String.length strin > 20 then
+      String.sub strin 0 (String.length strin - 2) ^ ","
+    else String.sub strin 0 (String.length strin - 2)
+  in
   let song_str =
     {|{"title":|} ^ ti ^ {|,"artist":|} ^ ar ^ {|,"album":|} ^ al
     ^ {|,"genre":|} ^ ge ^ {|,"length":|} ^ le ^ {|,"date":|} ^ da
@@ -95,4 +98,25 @@ let add_song_to_json ti ar al ge le da yt =
   in
   let new_json = from_string (trimmed ^ song_str ^ "]}") in
 
-  to_file "t" new_json
+  to_file "SongListAux" new_json;
+  to_file "SongList" (Yojson.Basic.from_file "SongListAux")
+
+let stringify str = {|"|} ^ str ^ {|"|}
+
+let remove_song_to_json ti ar lst =
+  to_file "SongListAux" (from_string {|{"songs":[]}|});
+  (*Clears the json*)
+  for i = 0 to List.length lst - 1 do
+    if (List.nth lst i).title = ti && (List.nth lst i).artist = ar then ()
+    else
+      add_song_to_json
+        (stringify (List.nth lst i).title)
+        (stringify (List.nth lst i).artist)
+        (stringify (List.nth lst i).album)
+        (stringify (List.nth lst i).genre)
+        (stringify (List.nth lst i).length)
+        (stringify (List.nth lst i).date)
+        (stringify (List.nth lst i).ytlink)
+  done;
+  to_file "SongList" (Yojson.Basic.from_file "SongListAux")
+(* Copies the temperary json to real json*)
