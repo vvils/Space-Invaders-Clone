@@ -58,3 +58,5 @@ val remove_song_to_json : string -> string -> song list -> unit
     from the songs json*)
 
 (*val modify_song_to_json : *)
+
+val open_url : string -> unit

@@ -2,8 +2,8 @@ open OUnit2
 open Otunes
 open Songfuncs
 
-let songs = Yojson.Basic.from_file "songs.json"
-let songs2 = Yojson.Basic.from_file "songs2.json"
+let songs = Yojson.Basic.from_file "fortests.json"
+let songs2 = Yojson.Basic.from_file "empty.json"
 let testing = Yojson.Basic.from_file "SongList"
 
 let to_string_list_test (name : string) (json : Yojson.Basic.t)
@@ -54,11 +54,12 @@ let artist_by_title_test (name : string) (title : string)
   name >:: fun _ ->
   assert_equal expected_output (artist_by_title title (from_json json))
 
-(* let add_song_test (name : string) (title : string) (artist : string) (album :
-   string) (genre : string) (length : string) (date : string) (ytlink : string)
-   (expected_output : unit) : test = name >:: fun _ -> assert_equal
-   expected_output (add_song_to_json title artist album genre length date
-   ytlink) *)
+let add_song_test (name : string) (title : string) (artist : string)
+    (album : string) (genre : string) (length : string) (date : string)
+    (ytlink : string) (expected_output : unit) : test =
+  name >:: fun _ ->
+  assert_equal expected_output
+    (add_song_to_json title artist album genre length date ytlink)
 
 let remove_song_test (name : string) (title : string) (artist : string)
     (json : Yojson.Basic.t) (expected_output : unit) : test =
@@ -69,6 +70,9 @@ let remove_song_test (name : string) (title : string) (artist : string)
 (* let string_json_test (name : string) (title : string) (str : string)
    (expected_output : unit) : test = name >:: fun _ -> assert_equal
    expected_output (json_with_string title str) *)
+
+(* let open_url_test (name : string) (url : string) (expected_output : unit) :
+   test = name >:: fun _ -> assert_equal expected_output (open_url url) *)
 
 let printers str = str
 
@@ -82,9 +86,8 @@ let suite =
   >::: [
          to_string_t "" songs2 {|{"songs":[]}|};
          (* string_json_test "TESTING STRING" "t" {| {} |} (); *)
-         (* add_song_test "Adds a song to the song json" {|"extitle"|}
-            {|"exartist"|} {|"exalbum"|} {|"exgenre"|} {|"exlength"|}
-            {|"exdate"|} {|"exytlink"|} (); *)
+         add_song_test "Adds a song to the song json" "extitle" "exartist"
+           "exalbum" "exgenre" "exlength" "exdate" "exytlink" ();
          remove_song_test "Removes a song to song json" "extitle" "exartist"
            testing ();
          to_string_list_test "for songs" songs
@@ -181,7 +184,9 @@ let suite =
            "https://www.youtube.com/watch?v=F90Cw4l-8NY";
          ytlink_by_title_test "for songs2" "dsafds" songs2 "";
          artist_by_title_test "for songs" "Pompeii" songs "Bastille";
-         artist_by_title_test "for songs2" "wrqwewq" songs2 "";
+         artist_by_title_test "for songs2" "wrqwewq" songs2 ""
+         (* open_url_test "Opens the ytlink for Bastille - Pompeii"
+            "https://www.youtube.com/watch?v=F90Cw4l-8NY" (); *);
        ]
 
 let _ = run_test_tt_main suite
