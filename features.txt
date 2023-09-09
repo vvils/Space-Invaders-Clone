@@ -1,0 +1,63 @@
+note: Use WASD, esc, and left click. 
+
+ALIEN ANIMATION
+We animated the alien using coroutine like the ship.
+-We change the parent class for the class Alien to GSprite.
+-The method animatealiens is coroutine for animating the popping alien.
+There were a couple challenges...
+Problem 1: We noticed while one popping alien is animating when we hit another alien,
+the first alien stops animating and the second alien starts animating.
+Solution: We created 5 attributes for the alien coroutine to store the alien
+coroutine which allow us to animate 5 dead aliens at once. We could not use only one attribute
+to store and switch the coroutine for each dead alien because the previous alien that was hit will
+stop in the frame it was at once we assigned the attribute to a new alien that need to be animated.
+We selected the number 5 because we only need to use these attribute if the game has been modded.
+We think 5 is the perfect number to play the game smoothly under somewhat normal settings. (If bolt speed is
+not greater 80 and death speed is not too long (3 second)). We give room to let player tweak the settings.
+But if the settings are outrageous than there is no need to make the game more playable because the fun is lost.
+For instance, if BOLT_SPEED is 100 then the player will hit multiple aliens, needing us to animate
+all those aliens. If over 5 aliens are being animated at once, any alien after the fifth alien will
+just be deleted instead of going through the animation. Also player may set the DEATH_SPEED to a
+really large integer, making the alien animate a long time. Let say the player decided to have the alien
+animate for 20 second, it is likely that they will hit every alien before the alien is removed from the
+view because the alien is still "dying."
+
+Problem 2: When hitting an alien that is already dying, it restarts it dying process.
+Solution: We have the attribute _alreadyHit to track which alien is hit letting us ignore the animated alien.
+
+ADDING SOUND
+We wanted the game to be more lively so we added sound.
+We have 3 attributes to store Sound object and play it when we shoot, alien die, and ship die.
+
+LIVES DISPLAY
+We added a lives display similar to the one showcased in the example video provided in the assignment documentation.
+We implemented this fairly easily by creating two new attributes containing GLabel objects or None and drew them on the screen only
+when the game state was either active, paused, or continue. Positioning (x,y) was trial and error with the game width and game height as factors.
+
+ADDING SCORE DISPLAY
+Adding a score display was similar to adding the lives display with one stark difference: score received is not a constant value.
+Problem 1: Aliens further up on the screen (higher y-coords) should be worth more than aliens closer to the ship. This posed to be quite a problem.
+To fix it, we turned to the attributes in waves.py that contained the tuple of the position of an alien that was just hit.
+Using this information, we added score based upon the row number of the alien that's contained in this tuple.
+Though, this would only check the alien that was hit. What if we hit another alien while that one was dying?
+So, we also added an additonal 4 attributes for the five _deadalien attribute associated with the coroutines
+to add score for up to five aliens within DEATH_TIME.
+Problem 2: Checking if an alien was contained in _deadalien would add score continuously until the alien finished animating.
+To fix this, we created yet another selection of attributes (5) to act as a counter and only add score in increments of DEATH_TIME.
+
+MENU SYSTEM
+Perhaps the largest added feature; it's broken up unto 4 parts.
+1.OPENING AND CLOSING
+We wanted a menu system that would be able to pause the game, restart, or anything else at any time during our game.
+To accomplish this, we created many many GLabel objects stored in new attributes which are drawn by key input.
+The menu also pauses the game when the player is playing and presents the player with three options to pick from by mouse input
+and unpauses the game when the menu is exited.
+The menu is opened by pressing the 'escape' key
+2. BACK TO STARTING SCREEN
+The first option in the menu is to send the player back to the starting screen. This basically starts the game over as it calls start().
+3. RESTARTING
+The second option in the menu is to restart the wave/game. All this does is restart the wave which means it can only be
+selected when the player is playing the game and restarts the wave.
+4. CHEATS
+The final option turns on or off cheats. These cheats allows the user to have infinitely many lives and their bolts are extremely fast.
+This option is also color coated to indicate if cheats are on (green) or off (red).
